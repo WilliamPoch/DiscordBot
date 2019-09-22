@@ -1,0 +1,7 @@
+https://discordapp.com/oauth2/authorize?client_id=350552020136230924&scope=bot
+
+bot id = 350552020136230924
+
+secret iUtbnT6LgTogLZPvNjUdQo07c0PJxXmM
+
+token MzUwNTUyMDIwMTM2MjMwOTI0.XYYErg.ux7QGA-ZU-kaX7sZSlMhNEcIC94
