@@ -1,1 +1,0 @@
-rename "BOT_TOKEN.env" ".env"
