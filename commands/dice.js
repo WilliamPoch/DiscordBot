@@ -6,8 +6,7 @@ module.exports = message => {
     } else {
         var diceSplit = messagesplit[1].split("+");
         var list = [];
-        var total = 0;
-        var dice, roll = 0;
+        var total = 0, dice = [], roll = 0;
 
         for (i = 0; i < diceSplit.length; i++) {
             dice = diceSplit[i].split("d");
@@ -18,10 +17,10 @@ module.exports = message => {
             }
 
         }
-        if (list.length == 1 && dice == 20 && list[0] == 20) {
-            message.reply(total + " : [" + list + "] \nCritical Success!");
-        } else if (list.length == 1 && dice == 20 && list[0] == 1) {
-            message.reply(total + " : [" + list + "] \nF");
+        if (list.length == 1 && total == 20 && list[0] == 20) {
+            message.reply(total + " : [" + list + "]" + "\n" + "Critical Success!");
+        } else if (list.length == 1 && total == 1 && list[0] == 1) {
+            message.reply(total + " : [" + list + "]" + "\n" + "F");
         } else {
             message.reply(total + " : [" + list + "]");
         }
