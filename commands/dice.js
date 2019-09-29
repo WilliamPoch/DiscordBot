@@ -20,10 +20,10 @@ module.exports = message => {
         }
         if (list.length == 1 && dice == 20 && list[0] == 20) {
             message.reply(total + " : [" + list + "]");
-            message.reply("Critical Success!");
+            message.channel.send("Critical Success!");
         } else if (list.length == 1 && dice == 20 && list[0] == 1) {
             message.reply(total + " : [" + list + "]");
-            message.reply("F");
+            message.channel.send("F");
         } else {
             message.reply(total + " : [" + list + "]");
         }
