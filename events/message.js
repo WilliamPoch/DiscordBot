@@ -12,15 +12,15 @@ const lyrics = require('../commands/lyrics')
 const lastfm = require('../commands/lastfm')
 const ch = require('../commands/ch')
 
-
+var help = "!help";
 var emotes = ['feelsbadman', 'F', 'f'];
 var command = ["!kick", "!8ball", "!setColor", "!roll", "!steam", "!cache", "!wf", "!lyrics",
     "!lastfm", "!ch"];
 var comToPass = ['kick', 'ball', 'color', 'roll', 'steam', 'cache', 'wf', 'lyrics',
     'lastfm', 'ch'];
-//var description = ["@user you want to kick.", "Ask it any question!", "Specify a color role you'd like.",
-//    "Choose dice with xdy: x number of dice, y type of dice. \nEx: 1d20+1d6 rolls 1 d20 and 1 d6 dice.",
-//    "See each command for more help", "Steam stuff", "!cache 'steam profile URL'"];
+var description = ["@user you want to kick.", "Ask it any question!", "Specify a color role you'd like.",
+    "Choose dice with xdy: x number of dice, y type of dice. \nEx: 1d20+1d6 rolls 1 d20 and 1 d6 dice.",
+    "WIP", "!cache 'steam profile URL'", "WIP", "!lyrics 'Enter song + artist'", "WIP", "!ch game, !ch daily, or if you are brave, !ch nsfw"];
 
 
 
@@ -77,6 +77,12 @@ module.exports = (client, message) => {
         commands[comToPass[i]](message);
     } else if (emotes.includes(msg[0])) {
         commands['emote'](message);
+    } else if (help == msg[0]) {
+        var out = "";
+        for (i = 0; i < command.length; i++) {
+            out += (`**\n${command[i]}** \n${description[i]}`)
+        }
+        message.reply(out)
     }
 
 }

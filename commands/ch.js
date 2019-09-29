@@ -9,7 +9,7 @@ module.exports = message => {
     var messagesplit = message.content.split(" ");
 
     if (messagesplit.length < 2) {
-        message.reply("!ch rcg or !ch daily")
+        message.reply("!ch game or !ch daily")
     } else {
         if (messagesplit[1].includes("game")) {
             rp(rcg)
@@ -37,7 +37,8 @@ module.exports = message => {
                 .then(function (html) {
                     var date = s('div > br', html)[0].prev.data;
                     var author = s('div > br', html)[0].next.data;
-                    message.reply(date + " " + author + "http:" + s('div > img', html)[0].attribs.src);
+                    var url = ("http:" + s('div > img', html)[0].attribs.src);
+                    sendEmbeds(date, author, url, message)
                 })
                 .catch(function (err) {
                     console.log(err)
@@ -47,8 +48,9 @@ module.exports = message => {
             rp(rpg)
                 .then(function (html) {                  
                     var title = s('div > h2', html)[0].children[0].data;
+                    var author = 'Cyanide and Happiness'
                     var url = ("http:" + s('a > img', html)[1].attribs.src);
-                    sendEmbeds(title, url, message)
+                    sendEmbeds(title, author,  url, message)
                 })
                 .catch(function (err) {
                     console.log(err)
@@ -57,14 +59,14 @@ module.exports = message => {
     }
 
 
-    function sendEmbeds(title, url, message) {
+    function sendEmbeds(title, author, url, message) {
         let channel = message.channel;
 
         let embed1 = new Discord.RichEmbed({
             title: title,
             url: 'http://explosm.net/rpg',
             author: {
-                name: 'Cyanide and Happiness'
+                name: author,
             },
             image: {
                 url: url,
