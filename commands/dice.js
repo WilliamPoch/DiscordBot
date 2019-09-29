@@ -19,11 +19,9 @@ module.exports = message => {
 
         }
         if (list.length == 1 && dice == 20 && list[0] == 20) {
-            message.reply(total + " : [" + list + "]");
-            message.channel.send("Critical Success!");
+            message.reply(total + " : [" + list + "] \nCritical Success!");
         } else if (list.length == 1 && dice == 20 && list[0] == 1) {
-            message.reply(total + " : [" + list + "]");
-            message.channel.send("F");
+            message.reply(total + " : [" + list + "] \nF");
         } else {
             message.reply(total + " : [" + list + "]");
         }
