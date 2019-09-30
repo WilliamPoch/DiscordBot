@@ -23,8 +23,8 @@ module.exports = message => {
     //    .catch(console.error);
 
     try {
-        lyrics.azlyrics.getURL(messagesplit)
-            .then(r => lyrics.azlyrics.getLyrics(r)).catch(console.error)
+        lyrics.musixmatch.getURL(messagesplit)
+            .then(r => lyrics.musixmatch.getLyrics(r)).catch(console.error)
             .then(a => {
                 message.reply("\n" + a, { split: true });   
             }).catch (console.error)
