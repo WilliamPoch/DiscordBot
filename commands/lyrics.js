@@ -3,7 +3,7 @@ module.exports = message => {
 
     var messagesplit = message.content.split(" ");
     messagesplit.splice(0, 1);
-    messagesplit.join("");
+    messagesplit.join(" ");
 
 
 
