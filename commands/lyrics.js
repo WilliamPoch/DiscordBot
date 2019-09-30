@@ -23,8 +23,8 @@ module.exports = message => {
     //    .catch(console.error);
 
     try {
-        lyrics.lyricslive.getURL(messagesplit)
-            .then(r => lyrics.lyricslive.getLyrics(r)).catch(console.error)
+        lyrics.lyricscom.getURL(messagesplit)
+            .then(r => lyrics.lyricscom.getLyrics(r)).catch(console.error)
             .then(a => {
                 message.reply("\n" + a, { split: true });   
             }).catch (console.error)
