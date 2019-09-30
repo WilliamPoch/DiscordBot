@@ -9,7 +9,7 @@ module.exports = message => {
         var lyrics = await solenolyrics.requestLyricsFor(string);
         return (lyrics);
     };
-    f().then(a => message.reply(a, { split: true })).catch(function catchError(error) { 
+    f().then(a => message.reply("\n" + a, { split: true })).catch(function catchError(error) { 
         console.log(error)
         message.channel.send(error)
     });
