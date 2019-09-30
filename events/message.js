@@ -20,7 +20,7 @@ var comToPass = ['kick', 'ball', 'color', 'roll', 'steam', 'cache', 'wf', 'lyric
     'lastfm', 'ch'];
 var description = ["@user you want to kick.", "Ask it any question!", "Specify a color role you'd like.",
     "Choose dice with xdy: x number of dice, y type of dice. \nEx: 1d20+1d6 rolls 1 d20 and 1 d6 dice.",
-    "WIP", "!cache 'steam profile URL'", "WIP", "!lyrics 'Enter song + artist'", "WIP",
+    "WIP", "!cache 'steam profile URL'", "WIP", "!lyrics 'Enter song - artist'", "WIP",
     "!ch game, !ch daily, or if you are brave, !ch nsfw"];
 
 
