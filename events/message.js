@@ -13,7 +13,7 @@ const lastfm = require('../commands/lastfm')
 const ch = require('../commands/ch')
 
 var help = "!help";
-var emotes = ['feelsbadman', 'F', 'f'];
+var emotes = ['feelsbadman', 'F', 'f', 'YA'];
 var command = ["!kick", "!8ball", "!setColor", "!roll", "!steam", "!cache", "!wf", "!lyrics",
     "!lastfm", "!ch"];
 var comToPass = ['kick', 'ball', 'color', 'roll', 'steam', 'cache', 'wf', 'lyrics',
