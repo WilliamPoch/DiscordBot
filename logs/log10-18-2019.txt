@@ -1,11 +1,50 @@
-Fri Oct 18 2019 14:58:23 GMT+0700 (Indochina Time),183221438126227457,Garro,test
-Fri Oct 18 2019 14:58:27 GMT+0700 (Indochina Time),183221438126227457,Garro,a
-Fri Oct 18 2019 14:58:27 GMT+0700 (Indochina Time),183221438126227457,Garro,b
-Fri Oct 18 2019 14:58:28 GMT+0700 (Indochina Time),183221438126227457,Garro,c
-Fri Oct 18 2019 14:58:28 GMT+0700 (Indochina Time),183221438126227457,Garro,d
-Fri Oct 18 2019 14:58:28 GMT+0700 (Indochina Time),183221438126227457,Garro,e
-Fri Oct 18 2019 14:58:28 GMT+0700 (Indochina Time),350552020136230924,FeelsBotMan,<@183221438126227457>, Can you don't?.
-Fri Oct 18 2019 14:58:29 GMT+0700 (Indochina Time),183221438126227457,Garro,f
-Fri Oct 18 2019 14:58:29 GMT+0700 (Indochina Time),350552020136230924,FeelsBotMan,F
-Fri Oct 18 2019 15:04:49 GMT+0700 (Indochina Time),350552020136230924,FeelsBotMan,
-Fri Oct 18 2019 15:07:02 GMT+0700 (Indochina Time),297755506100142080,Fetus_Studios,welcome botman
+Fri Oct 18 2019 15:23:27 GMT+0700 (Indochina Time),183221438126227457,Garro,!help
+Fri Oct 18 2019 15:23:27 GMT+0700 (Indochina Time),350552020136230924,FeelsBotMan,<@183221438126227457>, **
+!kick** 
+@user you want to kick.**
+!8ball** 
+Ask it any question!**
+!setColor** 
+Specify a color role you'd like.**
+!roll** 
+Choose dice with xdy: x number of dice, y type of dice. 
+Ex: 1d20+1d6 rolls 1 d20 and 1 d6 dice.**
+!steam** 
+WIP**
+!cache** 
+!cache 'steam profile URL'**
+!wf** 
+WIP**
+!lyrics** 
+!lyrics 'Enter song - artist'**
+!lastfm** 
+WIP**
+!ch** 
+!ch game, !ch daily, or if you are brave, !ch nsfw**
+!logs** 
+!logs mm-dd-yyyy
+Fri Oct 18 2019 15:25:25 GMT+0700 (Indochina Time),183221438126227457,Garro,!help
+Fri Oct 18 2019 15:25:26 GMT+0700 (Indochina Time),350552020136230924,FeelsBotMan,<@183221438126227457>, **
+!kick** 
+@user you want to kick.**
+!8ball** 
+Ask it any question!**
+!setColor** 
+Specify a color role you'd like.**
+!roll** 
+Choose dice with xdy: x number of dice, y type of dice. 
+Ex: 1d20+1d6 rolls 1 d20 and 1 d6 dice.**
+!steam** 
+WIP**
+!cache** 
+!cache 'steam profile URL' *Does not do anything yet***
+!wf** 
+WIP**
+!lyrics** 
+!lyrics 'Song name - artist'**
+!lastfm** 
+WIP**
+!ch** 
+!ch game *WIP*, !ch daily, !ch nsfw**
+!logs** 
+!logs mm-dd-yyyy

@@ -1,7 +1,7 @@
 ﻿
 const kick = require('../commands/kick')
 const ball = require('../commands/8ball')
-const setColor = require('../commands/setColor')
+//const setColor = require('../commands/setColor')
 const emote = require('../commands/emote')
 const roll = require('../commands/dice')
 //const help = require('../commands/help')
@@ -16,13 +16,13 @@ const logs = require('../commands/log')
 var help = "!help";
 var emotes = ['feelsbadman', 'F', 'f', 'YA'];
 var command = ["!kick", "!8ball", "!setColor", "!roll", "!steam", "!cache", "!wf", "!lyrics",
-    "!lastfm", "!ch"];
+    "!lastfm", "!ch", "!logs"];
 var comToPass = ['kick', 'ball', 'color', 'roll', 'steam', 'cache', 'wf', 'lyrics',
-    'lastfm', 'ch'];
+    'lastfm', 'ch', 'logs'];
 var description = ["@user you want to kick.", "Ask it any question!", "Specify a color role you'd like.",
     "Choose dice with xdy: x number of dice, y type of dice. \nEx: 1d20+1d6 rolls 1 d20 and 1 d6 dice.",
-    "WIP", "!cache 'steam profile URL'", "WIP", "!lyrics 'Enter song - artist'", "WIP",
-    "!ch game, !ch daily, or if you are brave, !ch nsfw"];
+    "WIP", "!cache 'steam profile URL' Does not do anything yet", "WIP", "!lyrics 'Song name - artist'", "WIP",
+    "!ch game WIP, !ch daily, !ch nsfw", "!logs mm-dd-yyyy"];
 
 
 
@@ -44,7 +44,7 @@ const commands = {
         timer(ball, message)
     }
     , color: message => {
-        timer(setColor, message)
+        message.reply('disabled')
     }
     , emote: message => {
         timer(emote, message)

@@ -1,6 +1,5 @@
-module.exports = (client, message) => {
-    console.log('in')
-    message.channel.fetchMessages({ limit: 100, before: message.id })
-        .then(messages => console.log('received ${messages.size} messages'))
-        .catch(console.error);
+module.exports = message => {
+    var msgsplit = message.content.split(" ")
+    var date = msgsplit[1]
+    message.channel.send({ files: ['./logs/log'+date+'.txt'] }).catch(console.error);
 }
