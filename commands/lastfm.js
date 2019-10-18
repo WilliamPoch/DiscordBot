@@ -1,11 +1,12 @@
 ﻿module.exports = message => {
     var LastFmNode = require('lastfm').LastFmNode;
     const save = require('write-json-file')
-
+	const api = process.env.last_fm_api
+	const secret = process.env.last_secret
 
     var lastfm = new LastFmNode({
-        api_key: '97ba32cc9870ccf6062bce30b029a7ee',
-        secret: '410dc87860174f14913c0a0eeda9833',
+        api_key: api,
+        secret: secret,
         useragent: 'feelsbotman'
     });
 
