@@ -3,7 +3,7 @@ module.exports = message => {
     var emotes = ['feelsbadman'];
     var msg = message.content.toLowerCase();
 
-    if (chance > 1) {
+    if (chance > -1) {
         for (i = 0; i < emotes.length; i++) {
             if (message.content.includes(emotes[i])) {
                 message.channel.send({ files: ['./img/' + emotes[i] + '.png'] });
