@@ -2,7 +2,7 @@
 const fs = require('fs');
 const Discord = require('discord.js');
 const client = new Discord.Client();
-const DiscordAntiSpam = require('discord-anti-spam')
+const DiscordAntiSpam = require('discord-anti-spam');
 
 const AntiSpam = new DiscordAntiSpam({
     warnThreshold: 4, // Amount of messages sent in a row that will cause a warning.
@@ -29,10 +29,28 @@ AntiSpam.on("banEmit", (member) => console.log(`Attempt to ban ${member.user.tag
 AntiSpam.on("banAdd", (member) => console.log(`${member.user.tag} has been banned.`));
 AntiSpam.on("dataReset", () => console.log("Module cache has been cleared."));
 
+function date() {
+    var today = new Date();
+    var h = String(today.getHours()).padStart(2, '0');
+    var m = String(today.getMinutes()).padStart(2, '0');
+    var dd = String(today.getDate()).padStart(2, '0');
+    var mm = String(today.getMonth() + 1).padStart(2, '0');
+    var yyyy = today.getFullYear();
+
+    today = mm + '-' + dd + '-' + yyyy;
+    return today;
+}
+
 client.on("message", (msg) => {
     AntiSpam.message(msg);
 })
 
+client.on("message", (msg) => {
+    const CreateFiles = fs.createWriteStream('./logs/log' + date() + '.txt', {
+        flags: 'a'
+    })
+    CreateFiles.write(msg.createdAt + "," + msg.author.id + "," + msg.author.username + "," + msg.content + '\r\n')
+})
 fs.readdir('./events/', (err, files) => {
     files.forEach(file => {
         const eventHandler = require(`./events/${file}`)
