@@ -11,7 +11,7 @@ const wf = require('../commands/wf')
 const lyrics = require('../commands/lyrics')
 const lastfm = require('../commands/lastfm')
 const ch = require('../commands/ch')
-
+const logs = require('../commands/log')
 
 var help = "!help";
 var emotes = ['feelsbadman', 'F', 'f', 'YA'];
@@ -69,6 +69,9 @@ const commands = {
     }
     , ch: message => {
         timer(ch, message)
+    }
+    , logs: message => {
+        timer(logs, message)
     }
 };
 
