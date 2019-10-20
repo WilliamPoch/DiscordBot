@@ -8,7 +8,7 @@ const AntiSpam = new DiscordAntiSpam({
     warnThreshold: 4, // Amount of messages sent in a row that will cause a warning.
     banThreshold: 7, // Amount of messages sent in a row that will cause a ban
     maxInterval: 3000, // Amount of time (in ms) in which messages are cosidered spam.
-    warnMessage: ("{@user}, Can you don't?.", { files: ['./img/Pogweird.png'] }),// Message will be sent in chat upon warning.
+    warnMessage: "{@user}, Can you don't?.", // Message will be sent in chat upon warning.
     banMessage: ("**{user_tag}** has been banned for spamming.", { files: ['./img/Pogweird.png'] }), // Message will be sent in chat upon banning.
     maxDuplicatesWarning: 4, // Amount of same messages sent that will be considered as duplicates that will cause a warning.
     maxDuplicatesBan: 8, // Amount of same messages sent that will be considered as duplicates that will cause a ban.
@@ -35,7 +35,7 @@ function date() {
     var mm = String(today.getMonth() + 1).padStart(2, '0');
     var yyyy = today.getFullYear();
 
-    today = mm + '-' + dd + '-' + yyyy;
+    today = dd + '-' + mm + '-' + yyyy;
     return today;
 }
 
@@ -47,7 +47,17 @@ client.on("message", (msg) => {
     const CreateFiles = fs.createWriteStream('./logs/log' + date() + '.txt', {
         flags: 'a'
     })
-    CreateFiles.write(msg.createdTimestamp + "," + msg.author.id + "," + msg.author.username + "," + msg.content + "," + msg.attachments + '\r\n')
+    let link
+    for (var [key, value] of msg.attachments) {
+        link = (value.url);
+    }
+    if (link != undefined) {
+        CreateFiles.write(msg.createdAt + "," + msg.author.id + "," + msg.author.username + "," + msg.content + "," + link + '\r\n');
+    } else {
+        CreateFiles.write(msg.createdAt + "," + msg.author.id + "," + msg.author.username + "," + msg.content + "," + '\r\n');
+    }
+    
+    
 })
 fs.readdir('./events/', (err, files) => {
     files.forEach(file => {
