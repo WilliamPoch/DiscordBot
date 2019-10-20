@@ -35,7 +35,18 @@ function date() {
     var mm = String(today.getMonth() + 1).padStart(2, '0');
     var yyyy = today.getFullYear();
 
-    today = dd + '-' + mm + '-' + yyyy;
+    today = dd +  '-' + mm + '-' + yyyy;
+    return today;
+}
+function dateTime() {
+    var today = new Date();
+    var hour = String(today.getHours()).padStart(2, '0');
+    var min = String(today.getMinutes()).padStart(2, '0');
+    var dd = String(today.getDate()).padStart(2, '0');
+    var mm = String(today.getMonth() + 1).padStart(2, '0');
+    var yyyy = today.getFullYear();
+
+    today = hour + ":" + min + "-" + dd + '-' + mm + '-' + yyyy;
     return today;
 }
 
@@ -44,18 +55,26 @@ client.on("message", (msg) => {
 })
 
 client.on("message", (msg) => {
-    const CreateFiles = fs.createWriteStream('./logs/log' + date() + '.txt', {
+    let filename = './logs/log' + date() + '.txt';
+    let CreateFiles = fs.createWriteStream(filename, {
         flags: 'a'
     })
-    let link
-    for (var [key, value] of msg.attachments) {
-        link = (value.url);
-    }
-    if (link != undefined) {
-        CreateFiles.write(msg.createdAt + "," + msg.author.id + "," + msg.author.username + "," + msg.content + "," + link + '\r\n');
+    if (fs.existsSync(filename)) {
+        let link
+        for (var [key, value] of msg.attachments) {
+            link = (value.url);
+        }
+        if (link != undefined) {
+            CreateFiles.write(dateTime() + "," + msg.author.id + "," + msg.author.username + "," + msg.content + "," + link + '\r\n');
+        } else {
+            CreateFiles.write(dateTime() + "," + msg.author.id + "," + msg.author.username + "," + msg.content + "," + '\r\n');
+        }
     } else {
-        CreateFiles.write(msg.createdAt + "," + msg.author.id + "," + msg.author.username + "," + msg.content + "," + '\r\n');
+         CreateFiles = fs.createWriteStream(filename, {
+            flags: 'a'
+        })
     }
+   
     
     
 })
