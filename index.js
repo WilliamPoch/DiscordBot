@@ -31,8 +31,6 @@ AntiSpam.on("dataReset", () => console.log("Module cache has been cleared."));
 
 function date() {
     var today = new Date();
-    var h = String(today.getHours()).padStart(2, '0');
-    var m = String(today.getMinutes()).padStart(2, '0');
     var dd = String(today.getDate()).padStart(2, '0');
     var mm = String(today.getMonth() + 1).padStart(2, '0');
     var yyyy = today.getFullYear();
@@ -49,7 +47,7 @@ client.on("message", (msg) => {
     const CreateFiles = fs.createWriteStream('./logs/log' + date() + '.txt', {
         flags: 'a'
     })
-    CreateFiles.write(msg.createdAt + "," + msg.author.id + "," + msg.author.username + "," + msg.content + '\r\n')
+    CreateFiles.write(msg.createdTimestamp + "," + msg.author.id + "," + msg.author.username + "," + msg.content + "," + msg.attachments + '\r\n')
 })
 fs.readdir('./events/', (err, files) => {
     files.forEach(file => {
