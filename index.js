@@ -55,7 +55,7 @@ client.on("message", (msg) => {
 })
 
 client.on("message", (msg) => {
-    let filename = './logs/log' + date() + '.txt';
+    let filename = 'logs/log' + date() + '.txt';
     let CreateFiles = fs.createWriteStream(filename, {
         flags: 'a'
     })

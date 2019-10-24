@@ -10,8 +10,8 @@ module.exports = client => {
     today = dd +  '-' + mm + '-' + yyyy;
     return today;
 }
-	let filename = './logs/log' + date() + '.txt';
-    fs.writeFile(filename,"", function (err) {
+	let filename = 'logs/log' + date() + '.txt';
+    fs.appendFile(filename,"", function (err) {
 		if (err) throw err;
 		console.log(err);
 	});
