@@ -42,6 +42,19 @@ module.exports = message => {
                 })
                 .catch(function (err) {
                     console.log(err)
+                    rp(daily)
+                        .then(function (html) {
+                            var thumb = s('.ytp-cued-thumbnail-overlay', html);
+                            var author = s('div > a', html)[23].attribs.href;
+                            var url = s('div > a', html)[27].attribs.href;
+                            console.log(thumb)
+                            message.channel.send(url)
+                            //sendEmbeds(url, author, url, message)
+                        })
+                        .catch(function (err) {
+                            console.log(err)
+
+                        });
                 });
 
         } else if (messagesplit[1].includes("nsfw")) {
@@ -64,7 +77,7 @@ module.exports = message => {
 
         let embed1 = new Discord.RichEmbed({
             title: title,
-            url: 'http://explosm.net/rpg',
+            url: url,
             author: {
                 name: author,
             },
