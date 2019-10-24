@@ -47,7 +47,6 @@ module.exports = message => {
                             var thumb = s('.ytp-cued-thumbnail-overlay', html);
                             var author = s('div > a', html)[23].attribs.href;
                             var url = s('div > a', html)[27].attribs.href;
-                            console.log(thumb)
                             message.channel.send(url)
                             //sendEmbeds(url, author, url, message)
                         })
