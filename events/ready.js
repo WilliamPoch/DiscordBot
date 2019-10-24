@@ -11,8 +11,6 @@ module.exports = client => {
     return today;
 }
 	let filename = './logs/log' + date() + '.txt';
-    let CreateFiles = fs.createWriteStream(filename, {
-        flags: 'a'
-    })
+    fs.writeFile(filename,"")
     console.log(`Logged in as ${client.user.tag}!`)
 }
