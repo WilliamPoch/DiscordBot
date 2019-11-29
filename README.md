@@ -1,2 +1,3 @@
 # DiscordBot
-repo for feelsbotman
+repo for feelsbotman <br>
+Current stable version <br>
