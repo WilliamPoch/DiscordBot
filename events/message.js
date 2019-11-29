@@ -12,13 +12,24 @@ const lyrics = require('../commands/lyrics')
 const lastfm = require('../commands/lastfm')
 const ch = require('../commands/ch')
 const logs = require('../commands/log')
+const test = require('../commands/test')
+// const play = require('../commands/music/play')
+const leave = require('../commands/leave')
+// const skip = require('../commands/music/skip')
+// const pause = require('../commands/music/pause')
+// const volumeUp = require('../commands/music/volumeUp')
+// const volumeDown = require('../commands/music/volumeDown')
+// const resume = require('../commands/music/resume')
+// const stop = require('../commands/music/stop')
+
+
 
 var help = "!help";
 var emotes = ['feelsbadman', 'F', 'f', 'YA'];
 var command = ["!kick", "!8ball", "!setColor", "!roll", "!steam", "!cache", "!wf", "!lyrics",
-    "!lastfm", "!ch", "!logs"];
+    "!lastfm", "!ch", "!logs", "!test", "!leave"];
 var comToPass = ['kick', 'ball', 'color', 'roll', 'steam', 'cache', 'wf', 'lyrics',
-    'lastfm', 'ch', 'logs'];
+    'lastfm', 'ch', 'logs', 'test', 'leave'];
 var description = ["@user you want to kick.", "Ask a yes or no question!", "Specify a color role you'd like.",
     "Choose dice with xdy: x number of dice, y type of dice. \nEx: 1d20+1d6 rolls 1 d20 and 1 d6 dice.",
     "WIP", "!cache 'steam profile URL' Does not do anything yet", "WIP", "!lyrics 'Song name - artist'", "WIP",
@@ -73,6 +84,37 @@ const commands = {
     , logs: message => {
         timer(logs, message)
     }
+    , test: message => {
+        timer(test, message)
+    }
+    , leave: message => {
+        timer(leave, message)
+    }
+    // , play: message => {
+    //     timer(play, message)
+    // }
+    // , stop: message => {
+    //     timer(stop, message)
+    // }
+    // , skip: message => {
+    //     timer(skip, message)
+    // }
+    // , resume: message => {
+    //     timer(resume, message)
+    // }
+    // , volumeUp: message => {
+    //     timer(volumeUp, message)
+    // }
+    // , volumeDown: message => {
+    //     timer(volumeDown, message)
+    // }
+    // , stop: message => {
+    //     timer(stop, message)
+    // }
+    // , pause: message => {
+    //     timer(pause, message)
+    // }
+
 };
 
 module.exports = (client, message) => {
