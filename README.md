@@ -1,5 +1,5 @@
 # DiscordBot
-repo for feelsbotman <br>
+Repository for feelsbotman <br>
 Current stable version <br>
 **Current bugs and issues** <br>
  - Logging resets daily in heroku due to file saving. (Must relocate chat logs to offsite host or cloud).
@@ -9,5 +9,5 @@ Current stable version <br>
 
 
 You may use this repo for your own bot, but you must create your own API keys. <br>
-Follow this guide for more information  **https://discordjs.guide/** <br>
+Clone this repo and follow this guide for more information  **https://discordjs.guide/** <br>
 As of January 2020, this bot will no longer be updated or modified. A new python version is in the works. <br>
