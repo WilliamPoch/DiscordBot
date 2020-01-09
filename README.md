@@ -10,4 +10,4 @@ Current stable version <br>
 
 You may use this repo for your own bot, but you must create your own API keys. <br>
 Clone this repo and follow this guide for more information  **https://discordjs.guide/** <br>
-As of January 2020, this bot will no longer be updated or modified. A new python version is in the works. <br>
+As of January 2020, this bot will no longer be updated or modified. A new python version is in the works. Once the new version is in working order, this one will be moved to a old branch.<br>
