@@ -20,7 +20,7 @@
     "lastfm": "^0.9.3",
     "load-json-file": "^6.2.0",
     "musixmatch-node": "^1.0.2",
-    "node-fetch": "^2.6.0",
+    "node-fetch": "^2.6.1",
     "opusscript": "0.0.7",
     "request": "^2.88.0",
     "request-promise": "^4.2.4",
